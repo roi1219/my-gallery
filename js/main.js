@@ -32,10 +32,9 @@ function renderProjs() {
 }
 
 function renderModal(projID) {
-    console.log('hi');
     var proj = getProjById(projID);
     var date = new Date(proj.publishedAt);
-    console.log('date:', proj.publishedAt)
+    console.log(date);
     var strHTML = `<h2>${proj.name}</h2>
     <p class="item-intro text-muted">${proj.title}.</p>
     <img class="img-fluid d-block mx-auto" src="${proj.imgURL}" alt="">
@@ -49,6 +48,9 @@ function renderModal(projID) {
       <li>Client: Explore</li>
       <li>Category: Graphic Design</li>
     </ul>
+    <button onClick="openProj('${proj.url}')" class="btn btn-success" data-dismiss="modal" type="button">
+      <i class="fa fa-times"></i>
+      CHECK IT OUT!</button>
     <button class="btn btn-primary" data-dismiss="modal" type="button">
       <i class="fa fa-times"></i>
       Close Project</button>`;
@@ -66,4 +68,8 @@ function sendMSG(ev) {
     $('#email').val('');
     $('#subject').val('');
     $('#msg').val('');
+}
+
+function openProj(url){
+    window.open(url);
 }

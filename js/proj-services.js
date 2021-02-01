@@ -6,9 +6,9 @@ var gProjs = [
         name: 'Minesweeper',
         title: 'game',
         desc: 'logic game',
-        url: 'projs\Minesweeper',
+        url: 'https://roi1219.github.io/Minesweeper/',
         imgURL: 'img/portfolio/minesweeper.png',
-        publishedAt: '1611433841000'
+        publishedAt: '1611433841'
     },
     {
         id: 'bookShop',
