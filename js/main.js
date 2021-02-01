@@ -3,6 +3,7 @@
 console.log('Starting up');
 
 $(document).ready(init);
+$('.btn-send').click(sendMSG);
 
 function init() {
     renderProjs();
@@ -33,7 +34,7 @@ function renderProjs() {
 function renderModal(projID) {
     console.log('hi');
     var proj = getProjById(projID);
-    var date=new Date(proj.publishedAt);
+    var date = new Date(proj.publishedAt);
     console.log('date:', proj.publishedAt)
     var strHTML = `<h2>${proj.name}</h2>
     <p class="item-intro text-muted">${proj.title}.</p>
@@ -51,5 +52,18 @@ function renderModal(projID) {
     <button class="btn btn-primary" data-dismiss="modal" type="button">
       <i class="fa fa-times"></i>
       Close Project</button>`;
-      $('.proj-modal').html(strHTML);
+    $('.proj-modal').html(strHTML);
+}
+
+function sendMSG(ev) {
+    ev.preventDefault()
+    var email = $('#email').val();
+    var subject = $('#subject').val();
+    var msg = $('#msg').val();
+    var url = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${msg}`;
+    window.open(url);
+    openCanvas();
+    $('#email').val('');
+    $('#subject').val('');
+    $('#msg').val('');
 }

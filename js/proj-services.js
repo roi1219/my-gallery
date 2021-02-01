@@ -40,5 +40,3 @@ function getProjById(projID){
         return proj.id===projID;
     })
 }
-
-{/* <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1"> */}

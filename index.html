@@ -35,9 +35,18 @@
     <!-- Contact -->
     <section id="contact">
       <h4>Contact Me</h4>
-      <form>
-        <h2>Your email:</h2>
-        <input type="text" placeholder="Your email">
+      <form class="d-flex flex-column align-items-center">
+        <label for="email">Your email:</label>
+        <input class="form-control" name="email" id="email" type="txt" placeholder="Your email" required />
+
+        <label for="subject">Subject:</label>
+        <input class="form-control" name="subject" id="subject" type="txt" placeholder="Subject" required />
+
+        <label for="msg">Message Body:</label>
+        <textarea rows="5" class="form-control" name="msg" id="msg" type="txt" placeholder="Your messege goes here"
+          required /></textarea>
+
+        <button type="submit" class="btn btn-send btn-success mt-2 ">Send</button>
       </form>
     </section>
 
@@ -139,7 +148,7 @@
       </div>
     </div>
   </section>
- 
+
   <!-- Portfolio Modal -->
   <!-- Modal 1 -->
   <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
@@ -155,7 +164,7 @@
             <div class="col-lg-8 mx-auto">
               <div class="modal-body proj-modal">
                 <!-- Project Details Go Here -->
-                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -178,7 +187,7 @@
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="https://www.facebook.com/roi.levy2">
+              <a href="">
                 <i class="fa fa-facebook"></i>
               </a>
             </li>
