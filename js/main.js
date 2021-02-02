@@ -6,13 +6,13 @@ $(document).ready(init);
 $('.btn-send').click(sendMSG);
 
 function init() {
-    renderProjs();
+  renderProjs();
 }
 
 function renderProjs() {
-    var projs = getProjs();
-    var strHTML = projs.map(function (proj) {
-        return `
+  var projs = getProjs();
+  var strHTML = projs.map(function (proj) {
+    return `
         <div onclick="renderModal('${proj.id}')" class="col-md-4 col-sm-6 portfolio-item">
           <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
             <div class="portfolio-hover">
@@ -27,15 +27,15 @@ function renderProjs() {
             <p class="text-muted">${proj.title}</p>
           </div>
         </div>`
-    }).join('');
-    $('.proj-container').html(strHTML);
+  }).join('');
+  $('.proj-container').html(strHTML);
 }
 
 function renderModal(projID) {
-    var proj = getProjById(projID);
-    var date = new Date(proj.publishedAt);
-    console.log(date);
-    var strHTML = `<h2>${proj.name}</h2>
+  var proj = getProjById(projID);
+  var date = new Date(proj.publishedAt);
+  console.log(date);
+  var strHTML = `<h2>${proj.name}</h2>
     <p class="item-intro text-muted">${proj.title}.</p>
     <img class="img-fluid d-block mx-auto" src="${proj.imgURL}" alt="">
     <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est
@@ -54,22 +54,22 @@ function renderModal(projID) {
     <button class="btn btn-primary" data-dismiss="modal" type="button">
       <i class="fa fa-times"></i>
       Close Project</button>`;
-    $('.proj-modal').html(strHTML);
+  $('.proj-modal').html(strHTML);
 }
 
 function sendMSG(ev) {
-    ev.preventDefault()
-    var email = $('#email').val();
-    var subject = $('#subject').val();
-    var msg = $('#msg').val();
-    var url = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${msg}`;
-    window.open(url);
-    openCanvas();
-    $('#email').val('');
-    $('#subject').val('');
-    $('#msg').val('');
+  ev.preventDefault()
+  var email = $('#email').val();
+  var subject = $('#subject').val();
+  var msg = $('#msg').val();
+  var url = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${msg}`;
+  window.open(url);
+  openCanvas();
+  $('#email').val('');
+  $('#subject').val('');
+  $('#msg').val('');
 }
 
-function openProj(url){
-    window.open(url);
+function openProj(url) {
+  window.open(url);
 }

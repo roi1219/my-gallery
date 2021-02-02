@@ -15,7 +15,7 @@ var gProjs = [
         name: 'Book Shop',
         title: 'manage your books',
         desc: 'a comptrable place to manage your book store.',
-        url: 'projs\BookShop',
+        url: 'https://roi1219.github.io/Bookshop/',
         imgURL: 'img/portfolio/bookshop.png',
         publishedAt: '1612038641000'
     },
@@ -24,19 +24,19 @@ var gProjs = [
         name: 'Pacman',
         title: 'The nostalgic game in a new inviorment',
         desc: 'arcade game',
-        url: `projs\pacman`,
+        url: `https://roi1219.github.io/pacman/`,
         imgURL: 'img/portfolio/pacman.png',
         publishedAt: '1611001841000'
     },
 ];
 
 
-function getProjs(){
+function getProjs() {
     return gProjs;
 }
 
-function getProjById(projID){
-    return gProjs.find(function(proj){
-        return proj.id===projID;
+function getProjById(projID) {
+    return gProjs.find(function (proj) {
+        return proj.id === projID;
     })
 }
